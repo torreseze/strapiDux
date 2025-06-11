@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_seo_seo_configs",
+  "info": {
+    "displayName": "seo-config"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": false
+    },
+    "description": {
+      "type": "text"
+    },
+    "keywords": {
+      "type": "string"
+    },
+    "canonical": {
+      "type": "string"
+    },
+    "noIndex": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

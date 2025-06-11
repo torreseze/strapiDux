@@ -1,0 +1,64 @@
+{
+  "collectionName": "components_sections_heroes",
+  "info": {
+    "displayName": "hero",
+    "icon": "briefcase"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "ctaButtons": {
+      "type": "component",
+      "repeatable": true,
+      "component": "ui.cta-button"
+    },
+    "backgroundImage": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "backgroundColor": {
+      "type": "enumeration",
+      "enum": [
+        "white",
+        "blue",
+        "gradient"
+      ]
+    },
+    "textAlignment": {
+      "type": "enumeration",
+      "enum": [
+        "left",
+        "center",
+        "right"
+      ]
+    },
+    "containerSize": {
+      "type": "enumeration",
+      "enum": [
+        "sm",
+        "md",
+        "lg",
+        "xl",
+        "full"
+      ]
+    },
+    "seoConfig": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo-config"
+    }
+  }
+}

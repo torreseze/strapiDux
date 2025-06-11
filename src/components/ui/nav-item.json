@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_ui_nav_items",
+  "info": {
+    "displayName": "nav-item",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "navItemId": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "href": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "collectionName": "components_sections_contents",
+  "info": {
+    "displayName": "content",
+    "icon": "brush",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "content": {
+      "type": "blocks",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "imagePosition": {
+      "type": "enumeration",
+      "enum": [
+        "left",
+        "right"
+      ]
+    },
+    "ctaButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.cta-button"
+    },
+    "backgroundColor": {
+      "type": "enumeration",
+      "enum": [
+        "white",
+        "blue",
+        "transparent"
+      ]
+    },
+    "containerSize": {
+      "type": "enumeration",
+      "enum": [
+        "sm",
+        "md",
+        "lg",
+        "xl"
+      ]
+    },
+    "seoHeadingLevel": {
+      "type": "enumeration",
+      "enum": [
+        "h1",
+        "h2",
+        "h3",
+        "h4"
+      ]
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "collectionName": "components_layout_navbars",
+  "info": {
+    "displayName": "navbar",
+    "icon": "house"
+  },
+  "options": {},
+  "attributes": {
+    "logo": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "logoAlt": {
+      "type": "string",
+      "default": "Dux Software"
+    },
+    "logoHref": {
+      "type": "string",
+      "default": "/"
+    },
+    "logoWidth": {
+      "default": 120,
+      "type": "integer"
+    },
+    "logoHeight": {
+      "type": "integer",
+      "default": 40
+    },
+    "navItems": {
+      "type": "component",
+      "repeatable": true,
+      "component": "ui.nav-item",
+      "required": true
+    },
+    "ctaButton": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.cta-button",
+      "required": true
+    },
+    "backgroundColor": {
+      "type": "enumeration",
+      "enum": [
+        "trasnparent",
+        "white",
+        "blue"
+      ]
+    }
+  }
+}
