@@ -15,15 +15,6 @@
       "type": "blocks",
       "required": true
     },
-    "image": {
-      "type": "media",
-      "multiple": false,
-      "required": true,
-      "allowedTypes": [
-        "images",
-        "files"
-      ]
-    },
     "imagePosition": {
       "type": "enumeration",
       "enum": [
@@ -61,6 +52,14 @@
         "h3",
         "h4"
       ]
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

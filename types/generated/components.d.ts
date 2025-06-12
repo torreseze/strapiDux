@@ -3,6 +3,7 @@ import type { Schema, Struct } from '@strapi/strapi';
 export interface LayoutNavbar extends Struct.ComponentSchema {
   collectionName: 'components_layout_navbars';
   info: {
+    description: '';
     displayName: 'navbar';
     icon: 'house';
   };
@@ -10,7 +11,7 @@ export interface LayoutNavbar extends Struct.ComponentSchema {
     backgroundColor: Schema.Attribute.Enumeration<
       ['trasnparent', 'white', 'blue']
     >;
-    ctaButton: Schema.Attribute.Component<'ui.cta-button', false> &
+    ctaButton: Schema.Attribute.Component<'ui.cta-button', true> &
       Schema.Attribute.Required;
     logo: Schema.Attribute.Media<'images' | 'files'> &
       Schema.Attribute.Required;
@@ -38,8 +39,7 @@ export interface SectionsContent extends Struct.ComponentSchema {
     containerSize: Schema.Attribute.Enumeration<['sm', 'md', 'lg', 'xl']>;
     content: Schema.Attribute.Blocks & Schema.Attribute.Required;
     ctaButton: Schema.Attribute.Component<'ui.cta-button', false>;
-    image: Schema.Attribute.Media<'images' | 'files'> &
-      Schema.Attribute.Required;
+    image: Schema.Attribute.Media<'images' | 'files'>;
     imagePosition: Schema.Attribute.Enumeration<['left', 'right']>;
     seoHeadingLevel: Schema.Attribute.Enumeration<['h1', 'h2', 'h3', 'h4']>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
