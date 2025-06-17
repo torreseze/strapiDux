@@ -24,9 +24,9 @@ const config = {
   }
 };
 
-// Detectar entorno
+// Detectar entorno - Para keep-alive siempre usar producción
 const isProduction = process.env.NODE_ENV === 'production';
-const env = isProduction ? config.production : config.local;
+const env = config.production; // Siempre usar producción para mantener Render activo
 
 function makeHealthCheckRequest() {
   const client = env.protocol === 'https' ? https : http;
