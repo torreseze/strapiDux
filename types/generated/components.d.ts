@@ -11,7 +11,7 @@ export interface LayoutNavbar extends Struct.ComponentSchema {
     backgroundColor: Schema.Attribute.Enumeration<
       ['trasnparent', 'white', 'blue']
     >;
-    ctaButton: Schema.Attribute.Component<'ui.cta-button', true> &
+    ctaButtons: Schema.Attribute.Component<'ui.cta-button', true> &
       Schema.Attribute.Required;
     logo: Schema.Attribute.Media<'images' | 'files'> &
       Schema.Attribute.Required;
@@ -49,6 +49,7 @@ export interface SectionsContent extends Struct.ComponentSchema {
 export interface SectionsHero extends Struct.ComponentSchema {
   collectionName: 'components_sections_heroes';
   info: {
+    description: '';
     displayName: 'hero';
     icon: 'briefcase';
   };
@@ -57,6 +58,8 @@ export interface SectionsHero extends Struct.ComponentSchema {
       ['white', 'blue', 'gradient']
     >;
     backgroundImage: Schema.Attribute.Media<'images' | 'files'>;
+    bottomImage: Schema.Attribute.Media<'images'>;
+    bottomImageAlt: Schema.Attribute.String;
     containerSize: Schema.Attribute.Enumeration<
       ['sm', 'md', 'lg', 'xl', 'full']
     >;
@@ -99,14 +102,73 @@ export interface UiCtaButton extends Struct.ComponentSchema {
   };
 }
 
+export interface UiDropdownCategory extends Struct.ComponentSchema {
+  collectionName: 'components_ui_dropdown_categories';
+  info: {
+    displayName: 'dropdown-category';
+    icon: 'archive';
+  };
+  attributes: {
+    categoryId: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    items: Schema.Attribute.Component<'ui.dropdown-item', true> &
+      Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface UiDropdownFooterAction extends Struct.ComponentSchema {
+  collectionName: 'components_ui_dropdown_footer_actions';
+  info: {
+    displayName: 'dropdown-footer-action';
+    icon: 'archive';
+  };
+  attributes: {
+    footerActionId: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    href: Schema.Attribute.String & Schema.Attribute.Required;
+    icon: Schema.Attribute.String;
+    label: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface UiDropdownItem extends Struct.ComponentSchema {
+  collectionName: 'components_ui_dropdown_items';
+  info: {
+    displayName: 'dropdown-item';
+    icon: 'archive';
+  };
+  attributes: {
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    dropdownItemId: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    href: Schema.Attribute.String & Schema.Attribute.Required;
+    icon: Schema.Attribute.String;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface UiNavItem extends Struct.ComponentSchema {
   collectionName: 'components_ui_nav_items';
   info: {
+    description: '';
     displayName: 'nav-item';
     icon: 'apps';
   };
   attributes: {
-    href: Schema.Attribute.String & Schema.Attribute.Required;
+    dropdownCategories: Schema.Attribute.Component<
+      'ui.dropdown-category',
+      true
+    >;
+    dropdownFooterActions: Schema.Attribute.Component<
+      'ui.dropdown-footer-action',
+      true
+    >;
+    hasDropdown: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    href: Schema.Attribute.String;
     label: Schema.Attribute.String & Schema.Attribute.Required;
     navItemId: Schema.Attribute.String &
       Schema.Attribute.Required &
@@ -122,6 +184,9 @@ declare module '@strapi/strapi' {
       'sections.hero': SectionsHero;
       'seo.seo-config': SeoSeoConfig;
       'ui.cta-button': UiCtaButton;
+      'ui.dropdown-category': UiDropdownCategory;
+      'ui.dropdown-footer-action': UiDropdownFooterAction;
+      'ui.dropdown-item': UiDropdownItem;
       'ui.nav-item': UiNavItem;
     }
   }

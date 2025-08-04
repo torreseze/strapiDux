@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_ui_dropdown_footer_actions",
+  "info": {
+    "displayName": "dropdown-footer-action",
+    "icon": "archive"
+  },
+  "options": {},
+  "attributes": {
+    "footerActionId": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "href": {
+      "type": "string",
+      "required": true
+    },
+    "icon": {
+      "type": "string"
+    }
+  }
+}

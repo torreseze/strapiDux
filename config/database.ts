@@ -1,6 +1,18 @@
 import path from 'path';
 
 export default ({ env }) => {
+  if (env('NODE_ENV') === 'development') {
+    return {
+      connection: {
+        client: 'sqlite',
+        connection: {
+          filename: path.join(__dirname, '..', '..', env('DATABASE_FILENAME', '.tmp/data.db')),
+        },
+        useNullAsDefault: true,
+      },
+    };
+  }
+
   const client = env('DATABASE_CLIENT', 'sqlite');
 
   const connections = {

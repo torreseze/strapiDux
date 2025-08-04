@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_ui_dropdown_categories",
+  "info": {
+    "displayName": "dropdown-category",
+    "icon": "archive"
+  },
+  "options": {},
+  "attributes": {
+    "categoryId": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "ui.dropdown-item",
+      "required": true
+    }
+  }
+}

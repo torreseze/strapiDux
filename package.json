@@ -9,6 +9,8 @@
     "deploy": "strapi deploy",
     "dev": "strapi develop",
     "develop": "strapi develop",
+    "dev:deploy": "NODE_ENV=development strapi develop",
+    "start:dev": "NODE_ENV=development strapi start",
     "seed:example": "node ./scripts/seed.js",
     "start": "strapi start",
     "strapi": "strapi",

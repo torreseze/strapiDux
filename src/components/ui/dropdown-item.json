@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_ui_dropdown_items",
+  "info": {
+    "displayName": "dropdown-item",
+    "icon": "archive"
+  },
+  "options": {},
+  "attributes": {
+    "dropdownItemId": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "href": {
+      "type": "string",
+      "required": true
+    },
+    "icon": {
+      "type": "string"
+    }
+  }
+}

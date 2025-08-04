@@ -38,7 +38,7 @@
       "component": "ui.nav-item",
       "required": true
     },
-    "ctaButton": {
+    "ctaButtons": {
       "type": "component",
       "repeatable": true,
       "component": "ui.cta-button",

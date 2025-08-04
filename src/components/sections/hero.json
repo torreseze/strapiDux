@@ -2,7 +2,8 @@
   "collectionName": "components_sections_heroes",
   "info": {
     "displayName": "hero",
-    "icon": "briefcase"
+    "icon": "briefcase",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -22,12 +23,13 @@
       "component": "ui.cta-button"
     },
     "backgroundImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "backgroundColor": {
       "type": "enumeration",
@@ -59,6 +61,16 @@
       "type": "component",
       "repeatable": false,
       "component": "seo.seo-config"
+    },
+    "bottomImage": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "bottomImageAlt": {
+      "type": "string"
     }
   }
 }

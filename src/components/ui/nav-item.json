@@ -2,7 +2,8 @@
   "collectionName": "components_ui_nav_items",
   "info": {
     "displayName": "nav-item",
-    "icon": "apps"
+    "icon": "apps",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -17,7 +18,22 @@
     },
     "href": {
       "type": "string",
-      "required": true
+      "required": false
+    },
+    "hasDropdown": {
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    "dropdownCategories": {
+      "type": "component",
+      "repeatable": true,
+      "component": "ui.dropdown-category"
+    },
+    "dropdownFooterActions": {
+      "type": "component",
+      "repeatable": true,
+      "component": "ui.dropdown-footer-action"
     }
   }
 }
