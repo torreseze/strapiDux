@@ -35,15 +35,6 @@
         "transparent"
       ]
     },
-    "containerSize": {
-      "type": "enumeration",
-      "enum": [
-        "sm",
-        "md",
-        "lg",
-        "xl"
-      ]
-    },
     "image": {
       "type": "media",
       "multiple": false,
@@ -57,6 +48,10 @@
       "type": "component",
       "repeatable": true,
       "component": "ui.feature-item"
+    },
+    "subtitle": {
+      "type": "string",
+      "required": true
     }
   }
 }

@@ -36,12 +36,12 @@ export interface SectionsContent extends Struct.ComponentSchema {
     backgroundColor: Schema.Attribute.Enumeration<
       ['white', 'blue', 'transparent']
     >;
-    containerSize: Schema.Attribute.Enumeration<['sm', 'md', 'lg', 'xl']>;
     content: Schema.Attribute.Blocks & Schema.Attribute.Required;
     ctaButton: Schema.Attribute.Component<'ui.cta-button', false>;
     features: Schema.Attribute.Component<'ui.feature-item', true>;
     image: Schema.Attribute.Media<'images' | 'files'>;
     imagePosition: Schema.Attribute.Enumeration<['left', 'right']>;
+    subtitle: Schema.Attribute.String & Schema.Attribute.Required;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
@@ -56,7 +56,6 @@ export interface SectionsHero extends Struct.ComponentSchema {
   attributes: {
     backgroundColor: Schema.Attribute.Enumeration<['white', 'gradient']> &
       Schema.Attribute.DefaultTo<'gradient'>;
-    backgroundImage: Schema.Attribute.Media<'images' | 'files'>;
     bottomImage: Schema.Attribute.Media<'images'>;
     bottomImageAlt: Schema.Attribute.String;
     ctaButtons: Schema.Attribute.Component<'ui.cta-button', true>;

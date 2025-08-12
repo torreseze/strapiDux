@@ -22,15 +22,6 @@
       "repeatable": true,
       "component": "ui.cta-button"
     },
-    "backgroundImage": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files"
-      ]
-    },
     "backgroundColor": {
       "type": "enumeration",
       "enum": [
