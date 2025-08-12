@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_ui_feature_items",
+  "info": {
+    "displayName": "feature-item",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "text",
+      "required": true
+    },
+    "icon": {
+      "type": "string"
+    }
+  }
+}

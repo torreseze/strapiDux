@@ -2,15 +2,11 @@
   "collectionName": "components_ui_cta_buttons",
   "info": {
     "displayName": "cta-button",
-    "icon": "command"
+    "icon": "command",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "ctaButtonId": {
-      "type": "string",
-      "required": true,
-      "unique": true
-    },
     "label": {
       "type": "string",
       "required": true

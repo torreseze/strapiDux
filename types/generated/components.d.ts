@@ -39,9 +39,9 @@ export interface SectionsContent extends Struct.ComponentSchema {
     containerSize: Schema.Attribute.Enumeration<['sm', 'md', 'lg', 'xl']>;
     content: Schema.Attribute.Blocks & Schema.Attribute.Required;
     ctaButton: Schema.Attribute.Component<'ui.cta-button', false>;
+    features: Schema.Attribute.Component<'ui.feature-item', true>;
     image: Schema.Attribute.Media<'images' | 'files'>;
     imagePosition: Schema.Attribute.Enumeration<['left', 'right']>;
-    seoHeadingLevel: Schema.Attribute.Enumeration<['h1', 'h2', 'h3', 'h4']>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
@@ -54,20 +54,15 @@ export interface SectionsHero extends Struct.ComponentSchema {
     icon: 'briefcase';
   };
   attributes: {
-    backgroundColor: Schema.Attribute.Enumeration<
-      ['white', 'blue', 'gradient']
-    >;
+    backgroundColor: Schema.Attribute.Enumeration<['white', 'gradient']> &
+      Schema.Attribute.DefaultTo<'gradient'>;
     backgroundImage: Schema.Attribute.Media<'images' | 'files'>;
     bottomImage: Schema.Attribute.Media<'images'>;
     bottomImageAlt: Schema.Attribute.String;
-    containerSize: Schema.Attribute.Enumeration<
-      ['sm', 'md', 'lg', 'xl', 'full']
-    >;
     ctaButtons: Schema.Attribute.Component<'ui.cta-button', true>;
     description: Schema.Attribute.Text;
     seoConfig: Schema.Attribute.Component<'seo.seo-config', false>;
     subtitle: Schema.Attribute.String;
-    textAlignment: Schema.Attribute.Enumeration<['left', 'center', 'right']>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
@@ -89,13 +84,11 @@ export interface SeoSeoConfig extends Struct.ComponentSchema {
 export interface UiCtaButton extends Struct.ComponentSchema {
   collectionName: 'components_ui_cta_buttons';
   info: {
+    description: '';
     displayName: 'cta-button';
     icon: 'command';
   };
   attributes: {
-    ctaButtonId: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.Unique;
     href: Schema.Attribute.String & Schema.Attribute.Required;
     label: Schema.Attribute.String & Schema.Attribute.Required;
     variant: Schema.Attribute.Enumeration<['default', 'outline', 'ghost']>;
@@ -151,6 +144,18 @@ export interface UiDropdownItem extends Struct.ComponentSchema {
   };
 }
 
+export interface UiFeatureItem extends Struct.ComponentSchema {
+  collectionName: 'components_ui_feature_items';
+  info: {
+    displayName: 'feature-item';
+    icon: 'bulletList';
+  };
+  attributes: {
+    icon: Schema.Attribute.String;
+    text: Schema.Attribute.Text & Schema.Attribute.Required;
+  };
+}
+
 export interface UiNavItem extends Struct.ComponentSchema {
   collectionName: 'components_ui_nav_items';
   info: {
@@ -187,6 +192,7 @@ declare module '@strapi/strapi' {
       'ui.dropdown-category': UiDropdownCategory;
       'ui.dropdown-footer-action': UiDropdownFooterAction;
       'ui.dropdown-item': UiDropdownItem;
+      'ui.feature-item': UiFeatureItem;
       'ui.nav-item': UiNavItem;
     }
   }

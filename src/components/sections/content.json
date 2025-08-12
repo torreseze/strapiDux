@@ -44,22 +44,19 @@
         "xl"
       ]
     },
-    "seoHeadingLevel": {
-      "type": "enumeration",
-      "enum": [
-        "h1",
-        "h2",
-        "h3",
-        "h4"
-      ]
-    },
     "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "features": {
+      "type": "component",
+      "repeatable": true,
+      "component": "ui.feature-item"
     }
   }
 }

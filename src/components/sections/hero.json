@@ -35,27 +35,9 @@
       "type": "enumeration",
       "enum": [
         "white",
-        "blue",
         "gradient"
-      ]
-    },
-    "textAlignment": {
-      "type": "enumeration",
-      "enum": [
-        "left",
-        "center",
-        "right"
-      ]
-    },
-    "containerSize": {
-      "type": "enumeration",
-      "enum": [
-        "sm",
-        "md",
-        "lg",
-        "xl",
-        "full"
-      ]
+      ],
+      "default": "gradient"
     },
     "seoConfig": {
       "type": "component",
@@ -63,11 +45,12 @@
       "component": "seo.seo-config"
     },
     "bottomImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "bottomImageAlt": {
       "type": "string"
