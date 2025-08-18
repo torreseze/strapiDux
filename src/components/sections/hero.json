@@ -35,16 +35,10 @@
       "repeatable": false,
       "component": "seo.seo-config"
     },
-    "bottomImage": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images"
-      ]
-    },
-    "bottomImageAlt": {
-      "type": "string"
+    "visualResource": {
+      "type": "component",
+      "repeatable": true,
+      "component": "ui.visual-resource"
     }
   }
 }

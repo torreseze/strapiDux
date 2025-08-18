@@ -1,0 +1,49 @@
+{
+  "collectionName": "components_ui_visual_resources",
+  "info": {
+    "displayName": "visual-resource",
+    "icon": "landscape",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "image",
+        "youtube",
+        "lottie"
+      ],
+      "required": true
+    },
+    "src": {
+      "type": "string",
+      "required": true
+    },
+    "alt": {
+      "type": "string"
+    },
+    "width": {
+      "type": "integer"
+    },
+    "height": {
+      "type": "integer"
+    },
+    "youtubeId": {
+      "type": "string"
+    },
+    "lottieOptions": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.lottie-options"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

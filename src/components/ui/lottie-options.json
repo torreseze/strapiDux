@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_ui_lottie_options",
+  "info": {
+    "displayName": "lottie-options",
+    "icon": "play"
+  },
+  "options": {},
+  "attributes": {
+    "loop": {
+      "type": "boolean",
+      "default": true
+    },
+    "autoplay": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

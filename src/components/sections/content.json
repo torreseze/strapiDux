@@ -7,13 +7,26 @@
   },
   "options": {},
   "attributes": {
+    "heading": {
+      "type": "string",
+      "required": true
+    },
     "title": {
       "type": "string",
       "required": true
     },
-    "content": {
-      "type": "blocks",
-      "required": true
+    "description": {
+      "type": "text"
+    },
+    "features": {
+      "type": "component",
+      "repeatable": true,
+      "component": "ui.feature-item"
+    },
+    "visualResource": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.visual-resource"
     },
     "imagePosition": {
       "type": "enumeration",
@@ -22,36 +35,17 @@
         "right"
       ]
     },
-    "ctaButton": {
+    "ctaButtons": {
       "type": "component",
-      "repeatable": false,
+      "repeatable": true,
       "component": "ui.cta-button"
     },
     "backgroundColor": {
       "type": "enumeration",
       "enum": [
         "white",
-        "blue",
-        "transparent"
+        "gradient"
       ]
-    },
-    "image": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files"
-      ]
-    },
-    "features": {
-      "type": "component",
-      "repeatable": true,
-      "component": "ui.feature-item"
-    },
-    "subtitle": {
-      "type": "string",
-      "required": true
     }
   }
 }

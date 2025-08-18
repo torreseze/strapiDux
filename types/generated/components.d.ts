@@ -33,16 +33,14 @@ export interface SectionsContent extends Struct.ComponentSchema {
     icon: 'brush';
   };
   attributes: {
-    backgroundColor: Schema.Attribute.Enumeration<
-      ['white', 'blue', 'transparent']
-    >;
-    content: Schema.Attribute.Blocks & Schema.Attribute.Required;
-    ctaButton: Schema.Attribute.Component<'ui.cta-button', false>;
+    backgroundColor: Schema.Attribute.Enumeration<['white', 'gradient']>;
+    ctaButtons: Schema.Attribute.Component<'ui.cta-button', true>;
+    description: Schema.Attribute.Text;
     features: Schema.Attribute.Component<'ui.feature-item', true>;
-    image: Schema.Attribute.Media<'images' | 'files'>;
+    heading: Schema.Attribute.String & Schema.Attribute.Required;
     imagePosition: Schema.Attribute.Enumeration<['left', 'right']>;
-    subtitle: Schema.Attribute.String & Schema.Attribute.Required;
     title: Schema.Attribute.String & Schema.Attribute.Required;
+    visualResource: Schema.Attribute.Component<'ui.visual-resource', false>;
   };
 }
 
@@ -56,13 +54,12 @@ export interface SectionsHero extends Struct.ComponentSchema {
   attributes: {
     backgroundColor: Schema.Attribute.Enumeration<['white', 'gradient']> &
       Schema.Attribute.DefaultTo<'gradient'>;
-    bottomImage: Schema.Attribute.Media<'images'>;
-    bottomImageAlt: Schema.Attribute.String;
     ctaButtons: Schema.Attribute.Component<'ui.cta-button', true>;
     description: Schema.Attribute.Text;
     seoConfig: Schema.Attribute.Component<'seo.seo-config', false>;
     subtitle: Schema.Attribute.String;
     title: Schema.Attribute.String & Schema.Attribute.Required;
+    visualResource: Schema.Attribute.Component<'ui.visual-resource', true>;
   };
 }
 
@@ -155,6 +152,18 @@ export interface UiFeatureItem extends Struct.ComponentSchema {
   };
 }
 
+export interface UiLottieOptions extends Struct.ComponentSchema {
+  collectionName: 'components_ui_lottie_options';
+  info: {
+    displayName: 'lottie-options';
+    icon: 'play';
+  };
+  attributes: {
+    autoplay: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+    loop: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+  };
+}
+
 export interface UiNavItem extends Struct.ComponentSchema {
   collectionName: 'components_ui_nav_items';
   info: {
@@ -180,6 +189,26 @@ export interface UiNavItem extends Struct.ComponentSchema {
   };
 }
 
+export interface UiVisualResource extends Struct.ComponentSchema {
+  collectionName: 'components_ui_visual_resources';
+  info: {
+    description: '';
+    displayName: 'visual-resource';
+    icon: 'landscape';
+  };
+  attributes: {
+    alt: Schema.Attribute.String;
+    height: Schema.Attribute.Integer;
+    image: Schema.Attribute.Media<'images' | 'files'>;
+    lottieOptions: Schema.Attribute.Component<'ui.lottie-options', false>;
+    src: Schema.Attribute.String & Schema.Attribute.Required;
+    type: Schema.Attribute.Enumeration<['image', 'youtube', 'lottie']> &
+      Schema.Attribute.Required;
+    width: Schema.Attribute.Integer;
+    youtubeId: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -192,7 +221,9 @@ declare module '@strapi/strapi' {
       'ui.dropdown-footer-action': UiDropdownFooterAction;
       'ui.dropdown-item': UiDropdownItem;
       'ui.feature-item': UiFeatureItem;
+      'ui.lottie-options': UiLottieOptions;
       'ui.nav-item': UiNavItem;
+      'ui.visual-resource': UiVisualResource;
     }
   }
 }
